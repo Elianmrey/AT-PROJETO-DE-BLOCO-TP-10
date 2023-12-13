@@ -11,15 +11,16 @@ import java.util.List;
 public class BrinquedoService {
 
     @Autowired
-    BrinquedoRepository BrinquedoRepository;
+    BrinquedoRepository brinquedoRepository;
 
     public void incluirBrinquedo(Brinquedo brinquedo)
     {
-        BrinquedoRepository.save(brinquedo);
+        brinquedoRepository.save(brinquedo);
     }
 
     public List<Brinquedo> obterBrinquedos(){
 
-        return (List<Brinquedo>)BrinquedoRepository.findAll();
+        return (List<Brinquedo>)brinquedoRepository.findAll();
     }
+    public void excluirSolicitante(Integer id){brinquedoRepository.deleteById(id);}
 }

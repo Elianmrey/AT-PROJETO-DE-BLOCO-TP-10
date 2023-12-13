@@ -22,4 +22,9 @@ public class SolicitanteService {
     public Collection<Solicitante> obterSolicitantes() {
         return (Collection<Solicitante>) solicitanteRepository.findAll();
     }
+
+
+    public void excluirSolicitante(Integer id){solicitanteRepository.deleteById(id);}
+
+
 }

@@ -25,4 +25,6 @@ public class CatalogoService {
         return (Collection<Catalogo>) catalogoRepository.findAll();
     }
 
+
+    public void excluirSolicitante(Integer id){catalogoRepository.deleteById(id);}
 }

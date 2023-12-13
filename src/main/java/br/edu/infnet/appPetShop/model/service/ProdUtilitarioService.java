@@ -18,7 +18,10 @@ public class ProdUtilitarioService {
     }
 
     public List<ProdUtilitario> obterProdUtilitarios(){
-
         return (List<ProdUtilitario>)prodUtilitarioRepository.findAll();
+    }
+
+    public void excluirSolicitante(Integer id){
+        prodUtilitarioRepository.deleteById(id);
     }
 }

@@ -21,4 +21,6 @@ public class PagamentoService {
 
         return (List<Pagamento>)pagamentoRepository.findAll();
     }
+
+    public void excluirSolicitante(Integer id){pagamentoRepository.deleteById(id);}
 }

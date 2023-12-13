@@ -21,4 +21,6 @@ public class CarrinhoComprasService {
         return (Collection<CarrinhoCompras>) carrinhoComprasRepository.findAll();
     }
 
+    public void excluirSolicitante(Integer id){carrinhoComprasRepository.deleteById(id);}
+
 }

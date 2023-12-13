@@ -20,4 +20,8 @@ public class EnderecoService {
     public Collection<Endereco> obterEnderecos() {
         return (Collection<Endereco>) enderecoRepository.findAll();
     }
+
+    public void excluirSolicitante(Integer id){enderecoRepository.deleteById(id);}
+
+
 }

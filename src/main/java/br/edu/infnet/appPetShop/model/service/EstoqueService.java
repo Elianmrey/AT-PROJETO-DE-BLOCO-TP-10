@@ -21,4 +21,6 @@ public class EstoqueService {
 
         return (List<Estoque>)estoqueRepository.findAll();
     }
+
+    public void excluirSolicitante(Integer id){estoqueRepository.deleteById(id);}
 }
