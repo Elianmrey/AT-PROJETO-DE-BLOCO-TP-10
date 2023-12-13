@@ -12,7 +12,7 @@ public class EstoqueService {
     @Autowired
     EstoqueRepository estoqueRepository;
 
-    public void incluirNoEstoque(Estoque estoque)
+    public void incluirEstoque(Estoque estoque)
     {
         estoqueRepository.save(estoque);
     }
@@ -22,5 +22,5 @@ public class EstoqueService {
         return (List<Estoque>)estoqueRepository.findAll();
     }
 
-    public void excluirSolicitante(Integer id){estoqueRepository.deleteById(id);}
+    public void excluirEstoque(Integer id){estoqueRepository.deleteById(id);}
 }

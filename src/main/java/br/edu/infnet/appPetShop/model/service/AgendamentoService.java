@@ -22,5 +22,5 @@ public class AgendamentoService {
         return (Collection<Agendamento>) agendamentoRepository.findAll();
     }
 
-    public void excluirSolicitante(Integer id){agendamentoRepository.deleteById(id);}
+    public void excluirAgendamentos(Integer id){agendamentoRepository.deleteById(id);}
 }

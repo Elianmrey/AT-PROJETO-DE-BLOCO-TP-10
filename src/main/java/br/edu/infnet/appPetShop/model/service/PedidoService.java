@@ -22,5 +22,5 @@ public class PedidoService {
         return (List<Pedido>)pedidoRepository.findAll();
     }
 
-    public void excluirSolicitante(Integer id){pedidoRepository.deleteById(id);}
+    public void excluirPedido(Integer id){pedidoRepository.deleteById(id);}
 }

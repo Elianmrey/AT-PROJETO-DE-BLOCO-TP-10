@@ -26,5 +26,5 @@ public class CatalogoService {
     }
 
 
-    public void excluirSolicitante(Integer id){catalogoRepository.deleteById(id);}
+    public void excluirCatalogo(Integer id){catalogoRepository.deleteById(id);}
 }

@@ -48,7 +48,7 @@ public class EstoqueLoader implements ApplicationRunner {
                     estoqueBrinquedo.setValorTotalEstoque(Double.parseDouble(dataSet[3]));
                     estoqueBrinquedo.setValidade(LocalDate.parse(dataSet[4]));
 
-                    estoqueService.incluirNoEstoque(estoqueBrinquedo);
+                    estoqueService.incluirEstoque(estoqueBrinquedo);
 
                     break;
                 case "P":
@@ -61,7 +61,7 @@ public class EstoqueLoader implements ApplicationRunner {
                     estoqueProduto.setValorTotalEstoque(Double.parseDouble(dataSet[3]));
                     estoqueProduto.setValidade(LocalDate.parse(dataSet[4]));
 
-                    estoqueService.incluirNoEstoque(estoqueProduto);
+                    estoqueService.incluirEstoque(estoqueProduto);
 
                     break;
             }

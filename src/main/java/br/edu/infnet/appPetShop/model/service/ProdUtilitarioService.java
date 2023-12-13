@@ -21,7 +21,7 @@ public class ProdUtilitarioService {
         return (List<ProdUtilitario>)prodUtilitarioRepository.findAll();
     }
 
-    public void excluirSolicitante(Integer id){
+    public void excluirProdUtilitrio(Integer id){
         prodUtilitarioRepository.deleteById(id);
     }
 }

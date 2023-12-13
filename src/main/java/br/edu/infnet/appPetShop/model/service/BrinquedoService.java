@@ -22,5 +22,5 @@ public class BrinquedoService {
 
         return (List<Brinquedo>)brinquedoRepository.findAll();
     }
-    public void excluirSolicitante(Integer id){brinquedoRepository.deleteById(id);}
+    public void excluirBrinquedo(Integer id){brinquedoRepository.deleteById(id);}
 }
