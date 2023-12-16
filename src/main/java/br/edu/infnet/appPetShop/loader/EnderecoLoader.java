@@ -1,4 +1,4 @@
-package br.edu.infnet.appPetShop;
+package br.edu.infnet.appPetShop.loader;
 
 import br.edu.infnet.appPetShop.model.domain.Endereco;
 import br.edu.infnet.appPetShop.model.domain.Solicitante;
@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+
 @Component
 @Order(2)
 public class EnderecoLoader implements ApplicationRunner {
@@ -20,7 +21,7 @@ public class EnderecoLoader implements ApplicationRunner {
     EnderecoService service;
 
     @Override
-    public void run(ApplicationArguments args) throws Exception  {
+    public void run(ApplicationArguments args) throws Exception {
         final String rota = "files/Enderecos.txt";
         FileReader arquivo;
         arquivo = new FileReader(rota);
@@ -29,8 +30,7 @@ public class EnderecoLoader implements ApplicationRunner {
         String leitura = leitordeLinha.readLine();
         String[] dataSet;
 
-        while ( leitura != null)
-        {
+        while (leitura != null) {
 
             dataSet = leitura.split(";");
 
@@ -41,9 +41,8 @@ public class EnderecoLoader implements ApplicationRunner {
 
             leitura = leitordeLinha.readLine();
         }
-        for(Endereco Endereco: service.obterEnderecos() )
-        {
-            System.out.println("[Endereco:] " +  Endereco);
+        for (Endereco Endereco : service.obterEnderecos()) {
+            System.out.println("[Endereco:] " + Endereco);
         }
     }
 

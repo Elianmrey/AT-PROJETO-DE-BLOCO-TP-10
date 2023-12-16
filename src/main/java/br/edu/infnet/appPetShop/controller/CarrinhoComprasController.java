@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
-@RequestMapping(value ="/api/carrinhocompras")
+@RequestMapping(value = "/api/carrinhocompras")
 public class CarrinhoComprasController {
 
 
@@ -17,20 +18,20 @@ public class CarrinhoComprasController {
 
     //GET
     @GetMapping(value = "/listar")
-    public List<CarrinhoCompras> obterLista(){
+    public List<CarrinhoCompras> obterLista() {
         return (List<CarrinhoCompras>) service.obterCarrinhoComprass();
     }
 
 
     //POST
     @PostMapping(value = "/incluir")
-    public void incluirCarrinho(CarrinhoCompras carrinhoCompras){
+    public void incluirCarrinho(@RequestBody CarrinhoCompras carrinhoCompras) {
         service.incluirCarrinhoCompras(carrinhoCompras);
     }
 
     //DELETE
     @DeleteMapping(value = "/{id}/excluir")
-    public void excluirCarrinho(@PathVariable Integer id){
+    public void excluirCarrinho(@PathVariable Integer id) {
         service.excluirCarrinhoCompras(id);
     }
 }

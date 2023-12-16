@@ -1,4 +1,4 @@
-package br.edu.infnet.appPetShop;
+package br.edu.infnet.appPetShop.loader;
 
 import br.edu.infnet.appPetShop.model.domain.*;
 import br.edu.infnet.appPetShop.model.service.PedidoService;

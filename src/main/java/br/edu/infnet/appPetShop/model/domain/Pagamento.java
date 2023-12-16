@@ -16,13 +16,12 @@ public class Pagamento {
     private Integer idPagamentos;
     private Long cartaoCredito;
     private LocalDate dataVencimento;
-    @Transient
+    @Transient //CVC Apenas para uso transitório não armazena no banco.
     private int cvcCodigoSeguranca;
     private int tokenId;
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "registro de pagamento: " + tokenId;
     }
 }

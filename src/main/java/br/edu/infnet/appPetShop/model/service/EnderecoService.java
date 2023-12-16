@@ -6,11 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+
 @Service
 public class EnderecoService {
 
-   @Autowired
-   EnderecoRepository enderecoRepository;
+    @Autowired
+    EnderecoRepository enderecoRepository;
 
 
     public void incluirEndereco(Endereco Endereco) {
@@ -21,7 +22,10 @@ public class EnderecoService {
         return (Collection<Endereco>) enderecoRepository.findAll();
     }
 
-    public void excluirEndereco(Integer id){enderecoRepository.deleteById(id);}
+    public void excluirEndereco(Integer id) {
+
+        enderecoRepository.deleteById(id);
+    }
 
 
 }

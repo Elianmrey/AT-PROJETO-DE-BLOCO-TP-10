@@ -24,7 +24,9 @@ public class SolicitanteService {
     }
 
 
-    public void excluirSolicitante(Integer id){solicitanteRepository.deleteById(id);}
+    public void excluirSolicitante(Integer id) {
+        solicitanteRepository.deleteById(id);
+    }
 
 
 }

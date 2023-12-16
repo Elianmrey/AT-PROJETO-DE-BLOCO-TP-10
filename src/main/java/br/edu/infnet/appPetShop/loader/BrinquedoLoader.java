@@ -1,4 +1,4 @@
-package br.edu.infnet.appPetShop;
+package br.edu.infnet.appPetShop.loader;
 
 import br.edu.infnet.appPetShop.model.domain.Brinquedo;
 import br.edu.infnet.appPetShop.model.service.BrinquedoService;
@@ -10,17 +10,18 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+
 @Component
 @Order(4)
 public class BrinquedoLoader implements ApplicationRunner {
 
- @Autowired
+    @Autowired
     BrinquedoService brinquedoService;
 
     @Override
-     public void run(ApplicationArguments args) throws Exception  {
+    public void run(ApplicationArguments args) throws Exception {
 
-      final String rota = "files/Brinquedos.txt";
+        final String rota = "files/Brinquedos.txt";
 
         FileReader arquivo = new FileReader(rota);
         BufferedReader leitordeLinha = new BufferedReader(arquivo);
@@ -28,8 +29,7 @@ public class BrinquedoLoader implements ApplicationRunner {
         String leitura = leitordeLinha.readLine();
         String[] dataSet;
 
-        while ( leitura != null)
-        {
+        while (leitura != null) {
 
             dataSet = leitura.split(";");
 
@@ -40,8 +40,7 @@ public class BrinquedoLoader implements ApplicationRunner {
 
             leitura = leitordeLinha.readLine();
         }
-        for(Brinquedo brinquedo: brinquedoService.obterBrinquedos() )
-        {
+        for (Brinquedo brinquedo : brinquedoService.obterBrinquedos()) {
             System.out.println("[Brinquedo:] " + brinquedo);
         }
     }
@@ -51,19 +50,17 @@ public class BrinquedoLoader implements ApplicationRunner {
 
         Brinquedo brinquedo = new Brinquedo();
 
-        brinquedo.setNome(dataSet[0]);
-        brinquedo.setValor(Double.parseDouble(dataSet[1]));
-        brinquedo.setCategoria(dataSet[2]);
-        brinquedo.setCodigo(Integer.parseInt(dataSet[3]));
-        brinquedo.setTipoBrinquedo(dataSet[4]);
-        brinquedo.setFabricante(dataSet[5]);
-        brinquedo.setAvaliacaoMedia(Integer.parseInt(dataSet[6]));
-        brinquedo.setIdadeRecomendada(Integer.parseInt(dataSet[7]));
-        brinquedo.setReciclavel(Boolean.parseBoolean(dataSet[8]));
+        brinquedo.setTipo(dataSet[0]);
+        brinquedo.setNome(dataSet[1]);
+        brinquedo.setValor(Double.parseDouble(dataSet[2]));
+        brinquedo.setCategoria(dataSet[3]);
+        brinquedo.setCodigo(Integer.parseInt(dataSet[4]));
+        brinquedo.setTipoBrinquedo(dataSet[5]);
+        brinquedo.setFabricante(dataSet[6]);
+        brinquedo.setAvaliacaoMedia(Integer.parseInt(dataSet[7]));
+        brinquedo.setIdadeRecomendada(Integer.parseInt(dataSet[8]));
+        brinquedo.setReciclavel(Boolean.parseBoolean(dataSet[9]));
 
-//        Pedido pedido = new Pedido();
-//        pedido.setIdPedido(Integer.parseInt(dataSet[9]));
-//        brinquedo.setPedido(pedido);
 
         return brinquedo;
     }

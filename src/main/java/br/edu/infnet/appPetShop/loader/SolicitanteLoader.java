@@ -1,4 +1,4 @@
-package br.edu.infnet.appPetShop;
+package br.edu.infnet.appPetShop.loader;
 
 
 import br.edu.infnet.appPetShop.model.domain.Solicitante;
@@ -13,7 +13,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 
-
 @Component
 @Order(1)
 public class SolicitanteLoader implements ApplicationRunner {
@@ -23,8 +22,8 @@ public class SolicitanteLoader implements ApplicationRunner {
 
     @Override
 
-    public void run(ApplicationArguments args) throws Exception  {
-      final String rota = "files/Solicitantes.txt";
+    public void run(ApplicationArguments args) throws Exception {
+        final String rota = "files/Solicitantes.txt";
         FileReader arquivo;
         arquivo = new FileReader(rota);
         BufferedReader leitordeLinha = new BufferedReader(arquivo);
@@ -32,8 +31,7 @@ public class SolicitanteLoader implements ApplicationRunner {
         String leitura = leitordeLinha.readLine();
         String[] dataSet;
 
-        while ( leitura != null)
-        {
+        while (leitura != null) {
 
             dataSet = leitura.split(";");
 
@@ -44,9 +42,8 @@ public class SolicitanteLoader implements ApplicationRunner {
 
             leitura = leitordeLinha.readLine();
         }
-        for(Solicitante solicitante: service.obterSolicitantes() )
-        {
-            System.out.println("[Solicitante:] " +  solicitante);
+        for (Solicitante solicitante : service.obterSolicitantes()) {
+            System.out.println("[Solicitante:] " + solicitante);
         }
     }
 
@@ -57,7 +54,7 @@ public class SolicitanteLoader implements ApplicationRunner {
         cliente.setCpf(dataSet[1]);
         cliente.setEmail(dataSet[2]);
         cliente.setTipoPet(dataSet[3]);
-        
+
         return cliente;
     }
 

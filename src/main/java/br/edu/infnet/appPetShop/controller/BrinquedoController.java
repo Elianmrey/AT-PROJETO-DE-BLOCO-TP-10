@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
-@RequestMapping(value ="/api/brinquedo")
+@RequestMapping(value = "/api/brinquedos")
 public class BrinquedoController {
 
 
@@ -16,19 +17,19 @@ public class BrinquedoController {
 
     //GET
     @GetMapping(value = "/listar")
-    public List<Brinquedo> obterLista(){
+    public List<Brinquedo> obterLista() {
         return service.obterBrinquedos();
     }
 
     //POST
-    @PostMapping(value = "/incluir")
-    public void incluirBrinquedo(Brinquedo brinquedo){
+    @PostMapping(value = "/incluir", consumes = {"application/json"})
+    public void incluirBrinquedo(@RequestBody Brinquedo brinquedo) {
         service.incluirBrinquedo(brinquedo);
     }
 
     //DELETE
     @DeleteMapping(value = "/{id}/excluir")
-    public void excluirBrinquedo(@PathVariable Integer id){
+    public void excluirBrinquedo(@PathVariable Integer id) {
         service.excluirBrinquedo(id);
     }
 }

@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
-@RequestMapping(value ="/api/agendamento")
+@RequestMapping(value = "/api/agendamentos")
 public class AgendamentoController {
 
     @Autowired
@@ -15,19 +16,20 @@ public class AgendamentoController {
 
     //GET
     @GetMapping(value = "/listar")
-    public List<Agendamento> obterLista(){
+    public List<Agendamento> obterLista() {
         return (List<Agendamento>) service.obterAgendamentos();
     }
 
     //POST
     @PostMapping(value = "/incluir")
-    public void incluirAgendamento(Agendamento agendamento){
+    public void incluirAgendamento(@RequestBody Agendamento agendamento) {
+
         service.incluirAgendamento(agendamento);
     }
 
     //DELETE
     @DeleteMapping(value = "/{id}/excluir")
-    public void excluirAgendamento(@PathVariable Integer id){
+    public void excluirAgendamento(@PathVariable Integer id) {
         service.excluirAgendamentos(id);
     }
 }

@@ -1,4 +1,4 @@
-package br.edu.infnet.appPetShop;
+package br.edu.infnet.appPetShop.loader;
 
 import br.edu.infnet.appPetShop.model.domain.*;
 import br.edu.infnet.appPetShop.model.service.CarrinhoComprasService;
@@ -15,13 +15,11 @@ import java.util.List;
 @Component
 public class CarrComprasLoader implements ApplicationRunner {
 
-
-
     @Autowired
     CarrinhoComprasService service;
 
     @Override
-    public void run(ApplicationArguments args) throws Exception  {
+    public void run(ApplicationArguments args) throws Exception {
         final String rota = "files/CarrinhoCompras.txt";
         FileReader arquivo;
         arquivo = new FileReader(rota);
@@ -30,8 +28,7 @@ public class CarrComprasLoader implements ApplicationRunner {
         String leitura = leitordeLinha.readLine();
         String[] dataSet;
 
-        while ( leitura != null)
-        {
+        while (leitura != null) {
 
             dataSet = leitura.split(";");
 
@@ -42,9 +39,8 @@ public class CarrComprasLoader implements ApplicationRunner {
 
             leitura = leitordeLinha.readLine();
         }
-        for(CarrinhoCompras CarrinhoCompras: service.obterCarrinhoComprass() )
-        {
-            System.out.println("[CarrinhoCompras:] " +  CarrinhoCompras);
+        for (CarrinhoCompras CarrinhoCompras : service.obterCarrinhoComprass()) {
+            System.out.println("[CarrinhoCompras:] " + CarrinhoCompras);
         }
     }
 
@@ -60,10 +56,9 @@ public class CarrComprasLoader implements ApplicationRunner {
                 List<Produto> listaBrinquedo = new ArrayList<>();
                 listaBrinquedo.add(brinquedo);
 
-                if(carrinhoCompras.getListCompraProdutos() == null) {
+                if (carrinhoCompras.getListCompraProdutos() == null) {
                     carrinhoCompras.setListCompraProdutos(listaBrinquedo);
-                }else
-                {
+                } else {
                     carrinhoCompras.getListCompraProdutos().add(brinquedo);
                 }
                 break;
@@ -76,10 +71,9 @@ public class CarrComprasLoader implements ApplicationRunner {
                 List<Produto> listaProdutoUtil = new ArrayList<>();
                 listaProdutoUtil.add(prodUtilitario);
 
-                if(carrinhoCompras.getListCompraProdutos() == null) {
+                if (carrinhoCompras.getListCompraProdutos() == null) {
                     carrinhoCompras.setListCompraProdutos(listaProdutoUtil);
-                }else
-                {
+                } else {
                     carrinhoCompras.getListCompraProdutos().add(prodUtilitario);
                 }
 
@@ -90,12 +84,11 @@ public class CarrComprasLoader implements ApplicationRunner {
         Agendamento agendamento = new Agendamento();
         agendamento.setIdAgendamento(Integer.parseInt(dataSet[2]));
 
-        if(carrinhoCompras.getListAgendamentoServicos() == null) {
+        if (carrinhoCompras.getListAgendamentoServicos() == null) {
             List<Agendamento> listaAgendamento = new ArrayList<>();
             listaAgendamento.add(agendamento);
             carrinhoCompras.setListAgendamentoServicos(listaAgendamento);
-        } else
-        {
+        } else {
             carrinhoCompras.getListAgendamentoServicos().add(agendamento);
         }
 
@@ -107,7 +100,7 @@ public class CarrComprasLoader implements ApplicationRunner {
         solicitante.setIdSolicitante(Integer.parseInt(dataSet[4]));
 
         carrinhoCompras.setSolicitante(solicitante);
-carrinhoCompras.setCuponDeconto(dataSet[5]);
+        carrinhoCompras.setCuponDeconto(dataSet[5]);
 
         return carrinhoCompras;
     }

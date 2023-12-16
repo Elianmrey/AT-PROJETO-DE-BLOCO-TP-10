@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -14,7 +15,6 @@ public class Catalogo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCatalogo;
-
 
     @OneToMany(cascade = CascadeType.DETACH)
     @JoinColumn(name = "idCatalogo")
@@ -30,10 +30,9 @@ public class Catalogo {
 
     private final String categoria = estado ? " Ativo" : " Em Estoque";
 
-@Override
-    public String toString()
-{
-    return  qtdeProdsServ + categoria;
-}
+    @Override
+    public String toString() {
+        return qtdeProdsServ + categoria;
+    }
 
 }

@@ -1,5 +1,6 @@
 package br.edu.infnet.appPetShop.model.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,21 +23,24 @@ public class Agendamento {
 
     @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
     @JoinColumn(name = "idServico")
+    @JsonBackReference
     private Servico servico = new Servico();
 
-    @ManyToOne (cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
     @JoinColumn(name = "idSolicitante")
-    private Solicitante solicitante = new Solicitante();
+    @JsonBackReference
+    private Solicitante solicitante;
 
     private LocalDate dataHora;
+
     @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
     @JoinColumn(name = "idCarrinho")
+    @JsonBackReference
     CarrinhoCompras carrinhoCompras;
-
 
 
     @Override
     public String toString() {
-       return  servico.toString() + "; " + solicitante.toString() + "; " + dataHora + ". ";
+        return servico.toString() + "; " + solicitante.toString() + "; " + dataHora + ". ";
     }
 }

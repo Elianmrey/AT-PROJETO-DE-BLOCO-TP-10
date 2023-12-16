@@ -6,21 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class EstoqueService {
 
     @Autowired
     EstoqueRepository estoqueRepository;
 
-    public void incluirEstoque(Estoque estoque)
-    {
+    public void incluirEstoque(Estoque estoque) {
         estoqueRepository.save(estoque);
     }
 
-    public List<Estoque> obterEstoque(){
+    public List<Estoque> obterEstoque() {
 
-        return (List<Estoque>)estoqueRepository.findAll();
+        return (List<Estoque>) estoqueRepository.findAll();
     }
 
-    public void excluirEstoque(Integer id){estoqueRepository.deleteById(id);}
+    public void excluirEstoque(Integer id) {
+        estoqueRepository.deleteById(id);
+    }
 }

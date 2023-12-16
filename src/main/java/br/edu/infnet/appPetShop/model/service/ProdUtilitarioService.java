@@ -6,22 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class ProdUtilitarioService {
 
     @Autowired
     private ProdUtilitarioRepository prodUtilitarioRepository;
 
-    public void incluirProdUtilitario(ProdUtilitario prodUtilitario)
-    {
+    public void incluirProdUtilitario(ProdUtilitario prodUtilitario) {
         prodUtilitarioRepository.save(prodUtilitario);
     }
 
-    public List<ProdUtilitario> obterProdUtilitarios(){
-        return (List<ProdUtilitario>)prodUtilitarioRepository.findAll();
+    public List<ProdUtilitario> obterProdUtilitarios() {
+        return (List<ProdUtilitario>) prodUtilitarioRepository.findAll();
     }
 
-    public void excluirProdUtilitrio(Integer id){
+    public void excluirProdUtilitrio(Integer id) {
         prodUtilitarioRepository.deleteById(id);
     }
 }

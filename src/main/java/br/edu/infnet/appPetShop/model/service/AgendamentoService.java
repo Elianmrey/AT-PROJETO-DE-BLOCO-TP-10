@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+
 @Service
 
 public class AgendamentoService {
@@ -22,5 +23,7 @@ public class AgendamentoService {
         return (Collection<Agendamento>) agendamentoRepository.findAll();
     }
 
-    public void excluirAgendamentos(Integer id){agendamentoRepository.deleteById(id);}
+    public void excluirAgendamentos(Integer id) {
+        agendamentoRepository.deleteById(id);
+    }
 }

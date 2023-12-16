@@ -1,4 +1,4 @@
-package br.edu.infnet.appPetShop;
+package br.edu.infnet.appPetShop.loader;
 
 import br.edu.infnet.appPetShop.model.domain.Agendamento;
 import br.edu.infnet.appPetShop.model.domain.Servico;
@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.time.LocalDate;
-
 
 
 @Component
@@ -49,25 +48,25 @@ public class AgendamentoLoader implements ApplicationRunner {
         }
     }
 
-    private static Agendamento getAgendamento(String[] dataSet, LocalDate dataHora)
-    {
+    private static Agendamento getAgendamento(String[] dataSet, LocalDate dataHora) {
         var solicitante = getSolicitante(dataSet);
         var servico = getServico(dataSet);
 
-       Agendamento agendamento = new Agendamento();
-       agendamento.setServico(servico);
-       agendamento.setSolicitante(solicitante);
-       agendamento.setDataHora(dataHora);
+        Agendamento agendamento = new Agendamento();
+        agendamento.setServico(servico);
+        agendamento.setSolicitante(solicitante);
+        agendamento.setDataHora(dataHora);
 
-        return  agendamento;
+        return agendamento;
 
     }
+
     private static Solicitante getSolicitante(String[] dataSet) {
 
         Solicitante solicitante = new Solicitante();
 
         solicitante.setIdSolicitante(Integer.valueOf(dataSet[0]));
-        
+
         return solicitante;
     }
 

@@ -31,9 +31,8 @@ public class CarrinhoCompras {
     private List<Agendamento> listAgendamentoServicos;
 
     @Override
-    public String toString()
-    {
-        return  pagamento.toString() + solicitante.toString() + cuponDeconto;
+    public String toString() {
+        return pagamento.toString() + solicitante.toString() + cuponDeconto;
     }
 
 }

@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
-@RequestMapping(value ="/api/endereco")
+@RequestMapping(value = "/api/enderecos")
 public class EnderecoController {
 
 
@@ -17,19 +18,19 @@ public class EnderecoController {
 
     //GET
     @GetMapping(value = "/listar")
-    public List<Endereco> obterLista(){
-        return (List<Endereco>)service.obterEnderecos();
+    public List<Endereco> obterLista() {
+        return (List<Endereco>) service.obterEnderecos();
     }
 
     //POST
     @PostMapping(value = "/incluir")
-    public void incluirEndereco(Endereco endereco){
+    public void incluirEndereco(@RequestBody Endereco endereco) {
         service.incluirEndereco(endereco);
     }
 
     //DELETE
     @DeleteMapping(value = "/{id}/excluir")
-    public void excluirEndereco(@PathVariable Integer id){
+    public void excluirEndereco(@PathVariable Integer id) {
         service.excluirEndereco(id);
     }
 }

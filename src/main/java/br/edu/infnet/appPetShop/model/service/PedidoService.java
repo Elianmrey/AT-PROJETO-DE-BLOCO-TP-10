@@ -6,21 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class PedidoService {
 
     @Autowired
     PedidoRepository pedidoRepository;
 
-    public void incluirPedido(Pedido pedido)
-    {
+    public void incluirPedido(Pedido pedido) {
         pedidoRepository.save(pedido);
     }
 
-    public List<Pedido> obterPedidos(){
+    public List<Pedido> obterPedidos() {
 
-        return (List<Pedido>)pedidoRepository.findAll();
+        return (List<Pedido>) pedidoRepository.findAll();
     }
 
-    public void excluirPedido(Integer id){pedidoRepository.deleteById(id);}
+    public void excluirPedido(Integer id) {
+        pedidoRepository.deleteById(id);
+    }
 }

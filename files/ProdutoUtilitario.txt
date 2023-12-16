@@ -1,4 +1,4 @@
-UtileArte&Co;Escova clean;Escova de banho; Produtos Utilitarios;653221;10.00;5;1
+UtileArte&Co;Escova clean;Escova de banho;Produtos Utilitarios;653221;10.00;5;1
 UtileArte&Co;Escova clean;Escova de banho;Produtos Utilitarios;653221;10.00;3;2
 UtileArte&Co;Shampoo para pets;Shampoo;Produtos Utilitarios;123456;15.50;2;3
 UtileArte&Co;Afiador de unhas para gatos;Miscelaneas;Produtos Utilitarios;789012;25.00;5;4

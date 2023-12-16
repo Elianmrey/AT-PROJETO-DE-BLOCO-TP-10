@@ -23,5 +23,7 @@ public class ServicoService {
         return (Collection<Servico>) servicoRepository.findAll();
     }
 
-    public void excluirServico(Integer id){servicoRepository.deleteById(id);}
+    public void excluirServico(Integer id) {
+        servicoRepository.deleteById(id);
+    }
 }

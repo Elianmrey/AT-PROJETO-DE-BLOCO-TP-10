@@ -1,4 +1,4 @@
-package br.edu.infnet.appPetShop;
+package br.edu.infnet.appPetShop.loader;
 
 import br.edu.infnet.appPetShop.model.domain.ProdUtilitario;
 import br.edu.infnet.appPetShop.model.service.ProdUtilitarioService;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+
 @Order(3)
 @Component
 public class ProdUtilitarioLoader implements ApplicationRunner {
@@ -20,7 +21,7 @@ public class ProdUtilitarioLoader implements ApplicationRunner {
 
     @Override
 
-    public void run(ApplicationArguments args) throws Exception  {
+    public void run(ApplicationArguments args) throws Exception {
         final String rota = "files/ProdutoUtilitario.txt";
         FileReader arquivo;
         arquivo = new FileReader(rota);
@@ -29,11 +30,9 @@ public class ProdUtilitarioLoader implements ApplicationRunner {
         String leitura = leitordeLinha.readLine();
         String[] dataSet;
 
-        while ( leitura != null)
-        {
+        while (leitura != null) {
 
             dataSet = leitura.split(";");
-
 
 
             ProdUtilitario prodUtilitario = GetProdUtilitario(dataSet);
@@ -42,8 +41,7 @@ public class ProdUtilitarioLoader implements ApplicationRunner {
 
             leitura = leitordeLinha.readLine();
         }
-        for(ProdUtilitario prodUtilitario: prodUtilitarioService.obterProdUtilitarios() )
-        {
+        for (ProdUtilitario prodUtilitario : prodUtilitarioService.obterProdUtilitarios()) {
             System.out.println("[Produto Utilitario:] " + prodUtilitario);
         }
     }
@@ -56,7 +54,7 @@ public class ProdUtilitarioLoader implements ApplicationRunner {
         prodUtilitario.setFabricante(dataSet[0]);
         prodUtilitario.setNome(dataSet[1]);
         prodUtilitario.setTipo(dataSet[2]);
-        prodUtilitario.setCategoria(dataSet[4]);
+        prodUtilitario.setCategoria(dataSet[3]);
         prodUtilitario.setCodigo(Integer.parseInt(dataSet[4]));
         prodUtilitario.setValor(Double.valueOf(dataSet[5]));
         prodUtilitario.setAvalicaoMedia(Integer.parseInt(dataSet[6]));

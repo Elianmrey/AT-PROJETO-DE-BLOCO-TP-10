@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 
 public class BrinquedoService {
@@ -13,14 +14,16 @@ public class BrinquedoService {
     @Autowired
     BrinquedoRepository brinquedoRepository;
 
-    public void incluirBrinquedo(Brinquedo brinquedo)
-    {
+    public void incluirBrinquedo(Brinquedo brinquedo) {
         brinquedoRepository.save(brinquedo);
     }
 
-    public List<Brinquedo> obterBrinquedos(){
+    public List<Brinquedo> obterBrinquedos() {
 
-        return (List<Brinquedo>)brinquedoRepository.findAll();
+        return (List<Brinquedo>) brinquedoRepository.findAll();
     }
-    public void excluirBrinquedo(Integer id){brinquedoRepository.deleteById(id);}
+
+    public void excluirBrinquedo(Integer id) {
+        brinquedoRepository.deleteById(id);
+    }
 }

@@ -6,21 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class PagamentoService {
 
     @Autowired
     PagamentoRepository pagamentoRepository;
 
-    public void incluirPagamento(Pagamento pagamento)
-    {
+    public void incluirPagamento(Pagamento pagamento) {
         pagamentoRepository.save(pagamento);
     }
 
-    public List<Pagamento> obterPagamentos(){
+    public List<Pagamento> obterPagamentos() {
 
-        return (List<Pagamento>)pagamentoRepository.findAll();
+        return (List<Pagamento>) pagamentoRepository.findAll();
     }
 
-    public void excluirPagamento(Integer id){pagamentoRepository.deleteById(id);}
+    public void excluirPagamento(Integer id) {
+        pagamentoRepository.deleteById(id);
+    }
 }

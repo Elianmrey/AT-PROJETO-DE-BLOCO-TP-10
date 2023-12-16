@@ -1,4 +1,4 @@
-package br.edu.infnet.appPetShop;
+package br.edu.infnet.appPetShop.loader;
 
 import br.edu.infnet.appPetShop.model.domain.*;
 import br.edu.infnet.appPetShop.model.service.CatalogoService;
@@ -20,7 +20,7 @@ public class CatalogoLoader implements ApplicationRunner {
     CatalogoService service;
 
     @Override
-    public void run(ApplicationArguments args) throws Exception  {
+    public void run(ApplicationArguments args) throws Exception {
         final String rota = "files/Catalogos.txt";
         FileReader arquivo;
         arquivo = new FileReader(rota);
@@ -29,8 +29,7 @@ public class CatalogoLoader implements ApplicationRunner {
         String leitura = leitordeLinha.readLine();
         String[] dataSet;
 
-        while ( leitura != null)
-        {
+        while (leitura != null) {
 
             dataSet = leitura.split(";");
 
@@ -41,9 +40,8 @@ public class CatalogoLoader implements ApplicationRunner {
 
             leitura = leitordeLinha.readLine();
         }
-        for(Catalogo Catalogo: service.obterCatalogos() )
-        {
-            System.out.println("[Catalogo:] " +  Catalogo);
+        for (Catalogo Catalogo : service.obterCatalogos()) {
+            System.out.println("[Catalogo:] " + Catalogo);
         }
     }
 
@@ -59,10 +57,9 @@ public class CatalogoLoader implements ApplicationRunner {
                 List<Produto> listaBrinquedo = new ArrayList<>();
                 listaBrinquedo.add(brinquedo);
 
-                if(catalogo.getProdutosLista() == null) {
+                if (catalogo.getProdutosLista() == null) {
                     catalogo.setProdutosLista(listaBrinquedo);
-                }else
-                {
+                } else {
                     catalogo.getProdutosLista().add(brinquedo);
                 }
                 break;
@@ -75,10 +72,9 @@ public class CatalogoLoader implements ApplicationRunner {
                 List<Produto> listaProdutoUtil = new ArrayList<>();
                 listaProdutoUtil.add(prodUtilitario);
 
-                if(catalogo.getProdutosLista() == null) {
+                if (catalogo.getProdutosLista() == null) {
                     catalogo.setProdutosLista(listaProdutoUtil);
-                }else
-                {
+                } else {
                     catalogo.getProdutosLista().add(prodUtilitario);
                 }
 
@@ -89,14 +85,13 @@ public class CatalogoLoader implements ApplicationRunner {
         Servico servico = new Servico();
         servico.setIdServico(Integer.parseInt(dataSet[2]));
 
-       if(catalogo.getServicosLista() == null) {
-           List<Servico> listaServico = new ArrayList<>();
-           listaServico.add(servico);
-           catalogo.setServicosLista(listaServico);
-       } else
-       {
-           catalogo.getServicosLista().add(servico);
-       }
+        if (catalogo.getServicosLista() == null) {
+            List<Servico> listaServico = new ArrayList<>();
+            listaServico.add(servico);
+            catalogo.setServicosLista(listaServico);
+        } else {
+            catalogo.getServicosLista().add(servico);
+        }
 
         catalogo.setQtdeProdsServ(Integer.parseInt(dataSet[3]));
         catalogo.setEstado(Boolean.parseBoolean(dataSet[4]));

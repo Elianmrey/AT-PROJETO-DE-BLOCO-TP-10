@@ -1,5 +1,6 @@
 package br.edu.infnet.appPetShop.model.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,8 +16,9 @@ public class Estoque {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idEstoque;
-    @ManyToOne (cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
     @JoinColumn(name = "idProduto")
+    @JsonBackReference
     private Produto produto;
 
     private int qtdeUnitaria;
@@ -24,8 +26,7 @@ public class Estoque {
     private LocalDate validade;
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return produto.toString() + " Quantidade: " + qtdeUnitaria + " Valor total de Estoque: " + valorTotalEstoque + " Data Validade: " + validade;
     }
 

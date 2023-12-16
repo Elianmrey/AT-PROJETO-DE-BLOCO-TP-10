@@ -1,7 +1,6 @@
-package br.edu.infnet.appPetShop;
+package br.edu.infnet.appPetShop.loader;
 
 
-import br.edu.infnet.appPetShop.model.domain.Pedido;
 import br.edu.infnet.appPetShop.model.domain.Servico;
 import br.edu.infnet.appPetShop.model.service.ServicoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ import java.io.FileReader;
 public class ServicoLoader implements ApplicationRunner {
 
     @Autowired
-      ServicoService servicoService;
+    ServicoService servicoService;
 
 
     @Override
