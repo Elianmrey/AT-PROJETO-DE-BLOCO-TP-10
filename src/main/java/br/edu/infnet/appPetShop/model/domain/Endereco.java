@@ -8,8 +8,7 @@ import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
-import static java.util.logging.Level.ALL;
-import static org.hibernate.annotations.CascadeType.*;
+import static org.hibernate.annotations.CascadeType.DELETE;
 
 @Getter
 @Setter
@@ -26,7 +25,6 @@ public class Endereco {
     private String bairro;
     private String localidade;
     private String uf;
-
 
     @ManyToOne(cascade = CascadeType.DETACH)
     @Cascade({DELETE})
