@@ -5,6 +5,7 @@ import br.edu.infnet.appPetShop.model.service.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -29,6 +30,7 @@ public class EnderecoController {
     }
 
     //DELETE
+
     @DeleteMapping(value = "/{id}/excluir")
     public void excluirEndereco(@PathVariable Integer id) {
         service.excluirEndereco(id);

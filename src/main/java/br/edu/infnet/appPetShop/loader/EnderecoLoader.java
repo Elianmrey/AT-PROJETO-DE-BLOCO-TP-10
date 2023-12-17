@@ -35,8 +35,12 @@ public class EnderecoLoader implements ApplicationRunner {
             dataSet = leitura.split(";");
 
 
-            Endereco endereco = GetEndereco(dataSet);
+            Endereco endereco = service.buscarCEP(dataSet[0]);
 
+            Solicitante solicitante = new Solicitante();
+            solicitante.setIdSolicitante(Integer.parseInt(dataSet[1]));
+
+            endereco.setSolicitantes(solicitante);
             service.incluirEndereco(endereco);
 
             leitura = leitordeLinha.readLine();
@@ -46,19 +50,4 @@ public class EnderecoLoader implements ApplicationRunner {
         }
     }
 
-
-    private static Endereco GetEndereco(String[] dataSet) {
-        Endereco endereco = new Endereco();
-
-        endereco.setLogradouro(dataSet[0]);
-        endereco.setCidade(dataSet[1]);
-        endereco.setEstado(dataSet[2]);
-        endereco.setCep(dataSet[3]);
-        endereco.setNumero(dataSet[4]);
-        Solicitante solicitante = new Solicitante();
-        solicitante.setIdSolicitante(Integer.parseInt(dataSet[5]));
-        endereco.setSolicitante(solicitante);
-
-        return endereco;
-    }
 }

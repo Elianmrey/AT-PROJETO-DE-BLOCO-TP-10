@@ -49,13 +49,14 @@ public class SolicitanteLoader implements ApplicationRunner {
 
 
     private static Solicitante GetSolicitante(String[] dataSet) {
-        Solicitante cliente = new Solicitante();
-        cliente.setNome(dataSet[0]);
-        cliente.setCpf(dataSet[1]);
-        cliente.setEmail(dataSet[2]);
-        cliente.setTipoPet(dataSet[3]);
+        Solicitante solicitante = new Solicitante();
+        solicitante.setNome(dataSet[0]);
+        solicitante.setCpf(dataSet[1]);
+        solicitante.setEmail(dataSet[2]);
+        solicitante.setTipoPet(dataSet[3]);
 
-        return cliente;
+
+        return solicitante;
     }
 
 

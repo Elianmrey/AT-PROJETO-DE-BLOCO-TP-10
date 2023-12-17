@@ -20,21 +20,27 @@ public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idEndereco;
-    private String logradouro;
-    private String numero;
-    private String cidade;
-    private String estado;
     private String cep;
+    private String logradouro;
+    private String complemento;
+    private String bairro;
+    private String localidade;
+    private String uf;
+
 
     @ManyToOne(cascade = CascadeType.DETACH)
     @Cascade({DELETE})
     @JoinColumn(name = "idSolicitante")
     @JsonBackReference
-    Solicitante solicitante;
+    private Solicitante solicitantes;
 
 
     @Override
     public String toString() {
-        return "Rua: " + getLogradouro() + ", Número: " + getNumero() + " ," + getCidade() + " - " + getEstado() + ". CEP: " + getCep() + ". ";
+        return cep +" ,"+ logradouro + " ," + complemento + " - " + bairro + localidade + uf;
     }
+
+
+
+
 }

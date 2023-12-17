@@ -22,9 +22,11 @@ public class Solicitante {
     private String nome;
     private String cpf;
     private String email;
-
     private String tipoPet;
 
+
+    @OneToMany(mappedBy = "solicitantes", cascade = CascadeType.PERSIST)
+    private Collection<Endereco> listaEnderecos;
 
     @Override
     public String toString() {
@@ -32,16 +34,10 @@ public class Solicitante {
     }
 
 
-    @OneToMany(mappedBy = "solicitante")
-    private Collection<Endereco> endereco;
 
-    public Collection<Endereco> getEndereco() {
-        return endereco;
-    }
 
-    public void setEndereco(Collection<Endereco> endereco) {
-        this.endereco = endereco;
-    }
+
+
 }
 
 

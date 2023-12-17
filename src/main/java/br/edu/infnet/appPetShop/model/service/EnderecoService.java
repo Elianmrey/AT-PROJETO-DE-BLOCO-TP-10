@@ -1,5 +1,6 @@
 package br.edu.infnet.appPetShop.model.service;
 
+import br.edu.infnet.appPetShop.Clients.IEnderecoClient;
 import br.edu.infnet.appPetShop.model.domain.Endereco;
 import br.edu.infnet.appPetShop.model.repository.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,14 @@ import java.util.Collection;
 
 @Service
 public class EnderecoService {
+
+
+    @Autowired
+    IEnderecoClient enerecoClient;
+  public Endereco buscarCEP( String cep){
+      return enerecoClient.buscarCEP(cep);
+  }
+
 
     @Autowired
     EnderecoRepository enderecoRepository;
