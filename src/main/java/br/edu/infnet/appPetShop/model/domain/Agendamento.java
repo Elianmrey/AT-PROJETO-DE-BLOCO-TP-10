@@ -23,19 +23,19 @@ public class Agendamento {
 
     @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
     @JoinColumn(name = "idServico")
-    @JsonBackReference
+    @JsonBackReference(value = "Servico")
     private Servico servico = new Servico();
 
     @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
     @JoinColumn(name = "idSolicitante")
-    @JsonBackReference
+    @JsonBackReference(value = "Solicitante")
     private Solicitante solicitante;
 
     private LocalDate dataHora;
 
     @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
     @JoinColumn(name = "idCarrinho")
-    @JsonBackReference
+    @JsonBackReference(value = "CarrinhoCompras")
     CarrinhoCompras carrinhoCompras;
 
 

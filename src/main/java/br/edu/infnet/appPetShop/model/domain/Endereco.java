@@ -35,10 +35,8 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return cep +" ,"+ logradouro + " ," + complemento + " - " + bairro + localidade + uf;
+        return cep + " ," + logradouro + " ," + complemento + " - " + bairro + localidade + uf;
     }
-
-
 
 
 }

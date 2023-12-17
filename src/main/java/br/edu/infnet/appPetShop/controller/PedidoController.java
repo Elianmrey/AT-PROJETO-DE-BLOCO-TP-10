@@ -21,7 +21,7 @@ public class PedidoController {
     }
 
     //POST
-    @PostMapping(value = "/incluir", consumes="application/json")
+    @PostMapping(value = "/incluir", consumes = "application/json")
     public void incluirPedido(@RequestBody Pedido pedido) {
         service.incluirPedido(pedido);
 

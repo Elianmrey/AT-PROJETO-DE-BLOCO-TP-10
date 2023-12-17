@@ -14,9 +14,10 @@ public class EnderecoService {
 
     @Autowired
     IEnderecoClient enerecoClient;
-  public Endereco buscarCEP( String cep){
-      return enerecoClient.buscarCEP(cep);
-  }
+
+    public Endereco buscarCEP(String cep) {
+        return enerecoClient.buscarCEP(cep);
+    }
 
 
     @Autowired
