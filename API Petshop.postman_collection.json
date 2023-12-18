@@ -1,0 +1,895 @@
+{
+	"info": {
+		"_postman_id": "8935d9c3-f5eb-4222-98e2-1743219f319f",
+		"name": "API Petshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31346265",
+		"_collection_link": "https://winter-meadow-30276.postman.co/workspace/My-Workspace~c028ed95-f95e-4253-8308-03e1c3a3d529/collection/31346265-8935d9c3-f5eb-4222-98e2-1743219f319f?action=share&source=collection_link&creator=31346265"
+	},
+	"item": [
+		{
+			"name": "Solicitante",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/solicitantes/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"solicitantes",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"nome\": \"Alice Oliveira\",\r\n        \"cpf\": \"901.234.567-89\",\r\n        \"email\": \"alice.oliveira@email.com\",\r\n        \"tipoPet\": \"Papagaio\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/solicitantes/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"solicitantes",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/solicitantes/25/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"solicitantes",
+								"25",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Serviço",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/servicos/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"servicos",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n       \r\n        \"nome\": \"Osso de Borracha\",\r\n        \"valor\": 23.95,\r\n        \"categoria\": \"Brinquedos\",\r\n        \"codigo\": 43210,\r\n        \"tipoBrinquedo\": \"Didatico\",\r\n        \"fabricante\": \"PetsBrinquedosco.\",\r\n        \"avaliacaoMedia\": 3,\r\n        \"idadeRecomendada\": 5,\r\n        \"reciclavel\": true,\r\n        \"reciclavelFormat\": \"Não\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/servicos/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"servicos",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/servicos/6/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"servicos",
+								"6",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Produto Utilitario",
+					"item": [
+						{
+							"name": "ListarProdUtilitario",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/produtosutilitarios/listar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"produtosutilitarios",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "IncluirProdUtilitario",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"nome\": \"Escova clean\",\r\n        \"valor\": 10.0,\r\n        \"categoria\": \"Produtos Utilitarios\",\r\n        \"codigo\": 653221,\r\n        \"fabricante\": \"UtileArte&Co\",\r\n        \"tipo\": \"Escova de banho\",\r\n        \"avalicaoMedia\": 5\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/produtosutilitarios/incluir?Content-Type=application/json",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"produtosutilitarios",
+										"incluir"
+									],
+									"query": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ExcluirProdUtilitario",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/produtosutilitarios/6/excluir",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"produtosutilitarios",
+										"6",
+										"excluir"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Brinquedo",
+					"item": [
+						{
+							"name": "ListarBrinquedo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/brinquedos/listar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"brinquedos",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "IncluirBrinquedo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n       \"tipo\": \"Brinquedo\",\r\n        \"nome\": \"Bastão de Borracha\",\r\n        \"valor\": 23.95,\r\n        \"categoria\": \"Brinquedos\",\r\n        \"codigo\": 43210,\r\n        \"tipoBrinquedo\": \"Didatico\",\r\n        \"fabricante\": \"PetsBrinquedosco.\",\r\n        \"avaliacaoMedia\": 3,\r\n        \"idadeRecomendada\": 5,\r\n        \"reciclavel\": true\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/brinquedos/incluir",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"brinquedos",
+										"incluir"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ExcluirBrinquedo",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/brinquedos/6/excluir",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"brinquedos",
+										"6",
+										"excluir"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pedidos/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedidos",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"listaProdutos\": \r\n        [\r\n            {\r\n                \r\n                \"nome\": \"Escova clean\",\r\n                \"valor\": 10.0,\r\n                \"categoria\": \"Produtos Utilitarios\",\r\n                \"codigo\": 653221,\r\n                \"fabricante\": \"UtileArte&Co\",\r\n                \"tipo\": \"Escova de banho\",\r\n                \"avalicaoMedia\": 5\r\n            }\r\n        ],\r\n        \"listaServico\": [],\r\n        \"entrega\": false,\r\n        \"valorTotalPedido\": 2.0,\r\n        \"solicitante\": {\r\n            \"idSolicitante\": 1\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pedidos/incluir?content-type=application/json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedidos",
+								"incluir"
+							],
+							"query": [
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pedidos/6/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedidos",
+								"6",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pagamento",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pagamentos/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pagamentos",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pagamentos/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pagamentos",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pagamentos/6/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pagamentos",
+								"6",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estoque",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/estoques/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estoques",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/estoques/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estoques",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/estoques/6/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estoques",
+								"6",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endereço",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/enderecos/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enderecos",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"cep\": \"01002-210\",\r\n        \"logradouro\": \"Rua Direita\",\r\n        \"complemento\": \"lado par\",\r\n        \"bairro\": \"Sé\",\r\n        \"localidade\": \"São Paulo\",\r\n        \"uf\": \"SP\",\r\n        \"solicitantes\":{\"idSolicitante\": 5}\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/enderecos/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enderecos",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/enderecos/4/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enderecos",
+								"4",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Catalogo",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/catalogos/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"catalogos",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \r\n        \"produtosLista\": [\r\n            {\r\n                \"idProduto\": 5\r\n            }\r\n        ],\r\n        \"servicosLista\": [\r\n            {\r\n                \"idServico\": 2\r\n            }],\r\n        \"qtdeProdsServ\": 8500,\r\n        \"estado\": true,\r\n        \"categoria\": \" Em Estoque\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/catalogos/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"catalogos",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/catalogos/4/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"catalogos",
+								"4",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CarrinhoCompras",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrinhocompras/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrinhocompras",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carrinhocompras/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrinhocompras",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrinhocompras/8/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrinhocompras",
+								"8",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agendamento",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/agendamentos/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"agendamentos",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {        \"dataHora\": \"2015-01-10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/agendamentos/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"agendamentos",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/agendamentos/6/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"agendamentos",
+								"6",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
